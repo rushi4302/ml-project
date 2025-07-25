@@ -1,29 +1,66 @@
-# Air Quality Analysis Project
+# Air Quality Health Risk Predictor
 
-This project is designed to analyze air quality data and provide insights using machine learning models and graphical user interfaces.
+This project predicts health risk levels based on air quality parameters using a machine learning model and provides a user-friendly GUI for predictions.
 
 ## Project Structure
 
-- **`air_quality_model.pkl`**: Pre-trained machine learning model for air quality prediction.
-- **`gui2.py`**: Python script for the graphical user interface to interact with the air quality model.
-- **`sppu_pune.csv`**: CSV file containing air quality data for SPPU Pune.
-- **`vimannagar.csv`**: CSV file containing air quality data for Vimannagar.
-- **`tut1.ipynb`**: Jupyter Notebook for tutorial or exploratory data analysis.
+```
+Project_1/
+├── air_quality_model.pkl      # Trained machine learning model (Logistic Regression)
+├── gui2.py                   # Python GUI application for predictions
+├── sppu_pune.csv             # Raw air quality data (Savitribai Phule Pune University)
+├── vimannagar.csv            # Raw air quality data (Vimannagar)
+└── tut1.ipynb                # Jupyter notebook for data analysis, model training, and export
+```
 
-## Requirements
+## Features
 
-To run this project, you need the following dependencies:
-- Python 3.x
-- Required Python libraries (install using `pip install -r requirements.txt`):
-  - pandas
-  - numpy
-  - scikit-learn
-  - matplotlib
-  - tkinter (for GUI)
+- Predicts health risk (Low/High) based on air quality indicators: PM2.5, PM10, NO2, NO, CO, O3.
+- Simple and intuitive GUI built with Tkinter.
+- Model trained using logistic regression on real air quality datasets.
 
 ## How to Run
 
-1. Install the required dependencies.
-2. Run the GUI application:
-   ```bash
+1. **Install dependencies**  
+   Make sure you have Python 3 and the following packages:
+   - numpy
+   - scikit-learn
+   - joblib
+   - pandas
+   - tkinter (usually included with Python)
+
+   Install missing packages with:
+   ```sh
+   pip install numpy scikit-learn joblib pandas
+   ```
+
+2. **Ensure files are present**  
+   - `air_quality_model.pkl` must be in the project directory.
+   - `gui2.py` is the main application file.
+
+3. **Run the GUI**
+   ```sh
    python gui2.py
+   ```
+
+4. **Using the Application**
+   - Enter values for PM2.5, PM10, NO2, NO, CO, and O3.
+   - Click "Predict Health Risk" to see the predicted risk level.
+
+## Model Training
+
+- Data preprocessing, feature engineering, and model training are documented in [`tut1.ipynb`](tut1.ipynb).
+- The model is trained on combined data from `sppu_pune.csv` and `vimannagar.csv`.
+- The trained model is saved as `air_quality_model.pkl`.
+
+## File Descriptions
+
+- [`gui2.py`](gui2.py): Main GUI application for predictions.
+- [`tut1.ipynb`](tut1.ipynb): Data analysis and model training notebook.
+- `air_quality_model.pkl`: Serialized trained model.
+- `sppu_pune.csv`, `vimannagar.csv`: Raw air quality datasets.
+
+## Credits
+
+- Data sources: Maharashtra Pollution Control Board, Indian Institute of Tropical Meteorology.
+- Developed for ML
